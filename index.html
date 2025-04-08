@@ -7,6 +7,48 @@
     <title>Document</title>
   </head>
   <body>
+    <main class="main-container">
+      <div class="cards-container">
+
+    <div class="digital-card front">
+      <span id="numbers">0000 0000 0000 0000</span>
+      <div class="name-and-date-container">
+        <span class="text cardholder" id="userName">User Name</span>
+        <span id="mm"> "00" </span>
+        <span> / </span>
+        <span id="yy"> "00"</span>
+      </div> 
+    </div>
+    <div class="digital-card back">
+      <span id="cvc">cvc</span>
+    </div>
+  </div>
+  <form class="forms-container">
+
+    <div class="form-box">
+    <label for="nameInput">Cardholder Name</label>
+    <input type="text" placeholder="e.g. John Doe" value="" id="nameInput"/>
+    </div>
+
+    <div class="form-box">
+    <label for="numberInput">Card Number</label>
+    <input type="text" value="e.g. 1234 5678 9123" id="numberInput"/>
+    </div>
+
+    <div class="inputs3in1">
+    <div class="form-box">
+    <label for="mmInput">Exp. Date (MM/YY)</label>
+    <input type="text" value="MM" id="mmInput"/>
+    <input type="text" value="YY" id="yyInput"/>
+    </div>
+    <div class="">
+      <label for="cvcInput">CVC</label>
+      <input type="text" value="e.g. 123" id="cvcInput"/>
+      </div>
+  </div>
+  </form>
+  <button class="button" id="button">Confirm</button>
     <script src="./js/scripts.js"></script>
+  </main>
   </body>
 </html>

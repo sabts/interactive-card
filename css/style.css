@@ -19,6 +19,79 @@ nav ul{
     margin-bottom: 0;
 }
 body{
+    background-image: url(../assents/bg-main-mobile.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
     margin: 0;
     font-family: sans-serif;
+}
+:root{
+    --card-front-backgroun: url(../assents/bg-card-front.png);
+    --card-size-small-width: 286px;
+    --card-size-large-width: 447px;
+    --card-size-small-height: 157px;
+    --card-size-large-height: 245px;
+    --card-text-extrasmall: 0.5625rem;
+    --card-text-small: 1.125rem;
+    --card-text-color: white;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.cards-container{
+    width: 343px;
+}
+.digital-card{
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    flex-direction: column;
+    padding: 0.3rem;
+    gap: 8px;
+    width: var(--card-size-small-width);
+    height: var(--card-size-small-height);
+}
+.digital-card.front{
+    top: 160px;
+    position: relative;
+    background-image: url(../assents/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.digital-card.front::before{
+    content: "";
+    position: relative;
+    width: 54px;
+    height: 30px;
+    background-image: url(../assents/card-logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.digital-card.back{
+    position: relative;
+    left: 56px;
+    z-index: -100px;
+    top: -100px;
+    background-image: url(../assents/bg-card-back.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+}
+.form-box{
+    display: flex;
+    flex-direction: column;
+}
+.inputs3in1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
