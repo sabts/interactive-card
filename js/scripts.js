@@ -21,8 +21,9 @@ const cardDateError = document.getElementById("card-date-error");
 const cardCvcError = document.getElementById("card-cvc-error");
 
 //Expresiones regulares: espacios(si el campo esta vacio)
-const letters = /[^a-zA-Z\s]/g; //letras y espacios
-const numbers = /[^0-9]/g;  //numeros
+const letters = /[^a-zA-ZñÑ\s]+$/; //letras y espacios
+const numbers = /\d+/;  //numeros
+const month = /^(0[1-9]|1[0-2])$/;
 
 //Sync funtions
 const nameSyncAndChange = () => {
@@ -53,18 +54,24 @@ const cvcSyncAndChange = () => {
 //Validate Funtions
 const validateInputContextName = () => {
   event.preventDefault();
-  const name = elementNameInput.value;
+  //const name = elementNameInput.value;
   
   if (letters.test(elementNameInput.value)) {
-    elementNameInput.classList.remove('invalid');
-    cardNameError.classList.remove('show');
-    console.log('Right format');
-  } 
-  if (!letters.test(elementNameInput.value)) {
+    elementNameInput.classList.remove('invalid')
+    cardNameError.classList.remove('show');} 
+
+  else if (elementNameInput.value === "")
+    {elementNameInput.classList.add('invalid')
+    cardNameError.classList.add('show');
+    cardNameError.textContent = 'Can’t be blank'; }
+
+    else {
     elementNameInput.classList.add('invalid');
     cardNameError.classList.add('show');
-    cardNameError.textContent = 'Wrong format, letters only'; }
-};
+    cardNameError.textContent = 'Wrong format, letters only'; } 
+  }  
+
+const validateInputContextNumber = () => {}
 
 //Sync events
 elementNameInput.addEventListener("input", nameSyncAndChange);

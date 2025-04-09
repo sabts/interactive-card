@@ -132,7 +132,7 @@ body{
   }
 
 .form-input.invalid {
-    border: 1px solid  #FF5050;
+    border: 1px solid #FF5050;
     color: #FF5050;
   }
 .error {
@@ -141,7 +141,6 @@ body{
     margin-top: 6px;
     display: none;
   }
-  
 .error.show {
     display: block;
     justify-content: end;
