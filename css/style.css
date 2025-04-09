@@ -22,7 +22,6 @@ body{
     background-image: url(../assents/bg-main-mobile.png);
     background-repeat: no-repeat;
     background-size: contain;
-
     margin: 0;
     font-family: sans-serif;
 }
@@ -41,24 +40,24 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2.5rem;
+    padding: 24px;
 }
 
 .cards-container{
     width: 343px;
 }
+
 .digital-card{
+    color: var(--card-text-color);
     display: flex;
     align-items: flex-start;
     align-content: center;
     flex-direction: column;
     padding: 0.3rem;
-    gap: 8px;
     width: var(--card-size-small-width);
     height: var(--card-size-small-height);
 }
 .digital-card.front{
-    top: 160px;
     position: relative;
     background-image: url(../assents/bg-card-front.png);
     background-repeat: no-repeat;
@@ -74,8 +73,8 @@ body{
     background-size: contain;
 }
 .digital-card.back{
-    position: relative;
-    left: 56px;
+    position: sticky;
+    left: 90px;
     z-index: -100px;
     top: -100px;
     background-image: url(../assents/bg-card-back.png);
@@ -84,14 +83,32 @@ body{
 }
 .form-container{
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 327px;
 }
 .form-box{
     display: flex;
     flex-direction: column;
+    margin: 1.25rem;
 }
-.inputs3in1{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+
+.text-input{
+    height: 45px;
+    width: 327px;
+    border-radius: 8px;
+    border: 1px solid #DFDEE0;
+}
+
+.text-input.invalid{
+    border: 1px solid  #FF5050;
+}
+
+.button{
+    color: var(--card-text-color);
+    background-color:  #21092F;
+    width: 327px;
+    height: 53px;
+    border-radius: 8px;
+    border: none;
 }

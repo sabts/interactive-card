@@ -8,8 +8,10 @@
   </head>
   <body>
     <main class="main-container">
-      <div class="cards-container">
-
+      <section class="cards-container">
+        <div class="digital-card back">
+          <span id="cvc">cvc</span>
+        </div>
     <div class="digital-card front">
       <span id="numbers">0000 0000 0000 0000</span>
       <div class="name-and-date-container">
@@ -19,35 +21,57 @@
         <span id="yy"> "00"</span>
       </div> 
     </div>
-    <div class="digital-card back">
-      <span id="cvc">cvc</span>
-    </div>
-  </div>
+  </section>
   <form class="forms-container">
 
-    <div class="form-box">
+    <section class="form-box">
     <label for="nameInput">Cardholder Name</label>
-    <input type="text" placeholder="e.g. John Doe" value="" id="nameInput"/>
-    </div>
+    <input type="text" 
+    placeholder="e.g. John Doe" 
+    value="" 
+    id="nameInput"
+    class="text-input"/>
+    </section>
 
-    <div class="form-box">
+    <section class="form-box">
     <label for="numberInput">Card Number</label>
-    <input type="text" value="e.g. 1234 5678 9123" id="numberInput"/>
-    </div>
+    <input type="text" 
+    placeholder="e.g. 1234 5678 9123" 
+    value="" 
+    maxlength= "16"
+    id="numberInput" 
+    class="text-input" />
+    </section>
 
-    <div class="inputs3in1">
-    <div class="form-box">
+    <section class="form-box">
     <label for="mmInput">Exp. Date (MM/YY)</label>
-    <input type="text" value="MM" id="mmInput"/>
-    <input type="text" value="YY" id="yyInput"/>
-    </div>
-    <div class="">
-      <label for="cvcInput">CVC</label>
-      <input type="text" value="e.g. 123" id="cvcInput"/>
-      </div>
-  </div>
+    <input type="text" 
+    placeholder="MM" 
+    maxlength= "2"
+    value="" 
+    id="mmInput" 
+    class="text-input"/>
+
+    <input type="text"
+    placeholder="YY" 
+    maxlength= "2"
+    value="" 
+    id="yyInput" 
+    class="text-input"/>
+    </section>
+
+    <section class="form-box">
+    <label for="cvcInput">CVC</label>
+    <input type="text"
+    placeholder="e.g. 123" 
+    maxlength= "3"
+    value="" 
+    id="cvcInput" 
+    class="text-input" />
+     </section>
+
+  <input type="submit" id="button" value="Confirm" class="button"></input>
   </form>
-  <button class="button" id="button">Confirm</button>
     <script src="./js/scripts.js"></script>
   </main>
   </body>
