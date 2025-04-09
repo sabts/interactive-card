@@ -10,15 +10,17 @@
     <main class="main-container">
       <section class="cards-container">
         <div class="digital-card back">
-          <span id="cvc">cvc</span>
+          <span id="cvc" class="text cardholder" >cvc</span>
         </div>
     <div class="digital-card front">
-      <span id="numbers">0000 0000 0000 0000</span>
+      <span class="text card-numbers" id="numbers">0000 0000 0000 0000</span>
       <div class="name-and-date-container">
         <span class="text cardholder" id="userName">User Name</span>
-        <span id="mm"> "00" </span>
-        <span> / </span>
-        <span id="yy"> "00"</span>
+        <div class="text date">
+            <span class="text cardholder"  id="mm"> 00 </span>
+        <span class="text cardholder" > / </span>
+        <span class="text cardholder"  id="yy"> 00</span>
+        </div>
       </div> 
     </div>
   </section>
@@ -53,14 +55,14 @@
           maxlength="2"
           value="" 
           id="mmInput" 
-          class="form-input-small" />
+          class="form-input small" />
   
         <input type="text"
           placeholder="YY" 
           maxlength="2"
           value="" 
           id="yyInput" 
-          class="form-input-small" />
+          class="form-input small" />
       </div>
       <span id="card-date-error" class="error hide">Can't be blank</span>
     </section>
@@ -77,7 +79,7 @@
     </section>
     </section>
   
-    <input type="submit" class="button" value="Confirm" />
+    <input type="submit" class="button text card-numbers" value="Confirm" />
   </form>
     <script src="./js/scripts.js"></script>
   </main>

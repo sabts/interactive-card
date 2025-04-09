@@ -63,6 +63,8 @@ body{
     background-image: url(../assents/bg-card-front.png);
     background-repeat: no-repeat;
     background-size: contain;
+    align-items: flex-start ;
+    justify-content: space-around;
 }
 .digital-card.front::before{
     content: "";
@@ -80,24 +82,48 @@ body{
     background-image: url(../assents/bg-card-back.png);
     background-repeat: no-repeat;
     background-size: contain;
+    align-items: flex-end ;
+    justify-content: center;
+    padding-right: 2.1rem;
+}
+.text{
+    color: var(--card-text-color);
+    font-weight: 500;
 }
 
+.text.card-numbers{
+    font-size: var(--card-text-small);
+    letter-spacing: 2.2px;
+}
+
+.text.cardholder{
+    letter-spacing: 1.286px;
+    text-transform: uppercase;
+    font-size: var(--card-text-extrasmall);
+}
+
+.name-and-date-container{ 
+    display: flex;
+    width: var(--card-size-small-width);
+    align-items: center;
+    padding-right: 1.5rem;
+    justify-content:space-between;
+}
 .form {
-    max-width: 375px;
-    padding: 24px;
-    box-sizing: border-box;
+    width: 375px;
+    padding: 1.5rem;
   }
 
 .form-box {
     margin-bottom: 1.5rem;
   }
   
-.form-label {
+.form-label{
     font-size: 12px;
     letter-spacing: 2px;
     font-weight: 500;
     color: #21092F;
-    text-transform: uppercase
+    text-transform: uppercase;
   }
 
 .form-input {
@@ -108,6 +134,7 @@ body{
     font-size: 1.125rem;
     color: #21092F;
     font-weight: 500;
+    padding-inline: 1rem;
     border-radius: 6px;
   }
 
@@ -117,7 +144,7 @@ body{
     gap: 0.5rem;
   }
 
-.form-input-small {
+.form-input.small {
     width: 72px;
     height: 45px;
     display: inline-block;
@@ -135,12 +162,14 @@ body{
     border: 1px solid #FF5050;
     color: #FF5050;
   }
+
 .error {
     color: #e74c3c;
     font-size: 0.875rem;
     margin-top: 6px;
     display: none;
   }
+
 .error.show {
     display: block;
     justify-content: end;
