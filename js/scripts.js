@@ -1,66 +1,69 @@
-//Names DOM
+//Card DOMS
 const elementCardName = document.getElementById("userName");
-const elementNameInput = document.getElementById("nameInput");
-
-//Numbers DOM
 const elementCardNumber = document.getElementById("numbers");
-const elementNumberInput = document.getElementById("numberInput");
-
-//Date & Year DOM
 const elementCardMm = document.getElementById("mm");
-const elementMnInput = document.getElementById("mmInput");
-
 const elementCardYy = document.getElementById("yy");
-const elementYyInput = document.getElementById("yyInput");
-
 const elementCardCvc = document.getElementById("cvc");
-const elementCvcInput = document.getElementById("cvcInput");
 
-//Button
+//Form DOMS
+const elementForm = document.getElementById("form")
+const elementNameInput = document.getElementById("nameInput");
+const elementNumberInput = document.getElementById("numberInput");
+const elementMnInput = document.getElementById("mmInput");
+const elementYyInput = document.getElementById("yyInput");
+const elementCvcInput = document.getElementById("cvcInput");
 const elementButtonSubmit = document.getElementById("button");
-//Expresiones regulares:
-//(!/[0-9]/.test(elementNameInput.value)) //no Numeros
-// (!/[a-z]/gi.test(elementMnInput.value))//letras Numeros
-//
+
+//Error DOMS 
+const cardNameError = document.getElementById("card-name-error");
+const cardNumberError = document.getElementById("card-number-error");
+const cardDateError = document.getElementById("card-date-error");
+const cardCvcError = document.getElementById("card-cvc-error");
+
+//Expresiones regulares: espacios(si el campo esta vacio)
+const letters = /[^a-zA-Z\s]/g; //letras y espacios
+const numbers = /[^0-9]/g;  //numeros
+
+//Sync funtions
 const nameSyncAndChange = () => {
   const name = elementNameInput.value;
-  if (!/[0-9]/.test(elementNameInput.value)) { // tampoco puede leer iconos
-    elementCardName.textContent = name;
-  } else {
-    elementNameInput.disabled;
-  }
+  elementCardName.textContent = name;
 };
 
 const numberSyncAndChange = () => {
-  const numbers = elementNumberInput.value; 
-  if (!/[a-z]/gi.test(elementNumberInput.value)) { // tampoco puede leer iconos
-    elementCardNumber.textContent = numbers;
-  }
+  const digits = elementNumberInput.value; 
+  elementCardNumber.textContent = digits;
 };
 
 const mmSyncAndChange = () => {
   const month = elementMnInput.value;
-  if (!/[a-z]/gi.test(elementMnInput.value)) {
     elementCardMm.textContent = month;
-  }
 };
 
 const yySyncAndChange = () => {
   const year = elementYyInput.value;
-  if (!/[a-z]/gi.test(elementYyInput.value)) {
-    elementCardYy.textContent = year;
-  }
+  elementCardYy.textContent = year;
 };
 
 const cvcSyncAndChange = () => {
   const cvc = elementCvcInput.value;
-  if (!/[a-z]/gi.test(elementCvcInput.value)) {
-    elementCardCvc.textContent = cvc;
-  }
+  elementCardCvc.textContent = cvc;
 };
 
+//Validate Funtions
 const validateInputContextName = () => {
-    if (/[0-9]/.test(elementNameInput.value))
+  event.preventDefault();
+  const name = elementNameInput.value;
+  
+  if (letters.test(elementNameInput.value)) {
+    elementNameInput.classList.remove('invalid');
+    cardNameError.classList.remove('show');
+    console.log('Right format');
+  } 
+  if (!letters.test(elementNameInput.value)) {
+    elementNameInput.classList.add('invalid');
+    cardNameError.classList.add('show');
+    cardNameError.textContent = 'Wrong format, letters only'; }
 };
 
 //Sync events
@@ -71,4 +74,4 @@ elementYyInput.addEventListener("input", yySyncAndChange);
 elementCvcInput.addEventListener("input", cvcSyncAndChange);
 
 //Validate events
-elementButtonSubmit.addEventListener("click", validateInputContext);
+elementForm.addEventListener("submit",validateInputContextName)

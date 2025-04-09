@@ -22,55 +22,62 @@
       </div> 
     </div>
   </section>
-  <form class="forms-container">
-
+  <form class="form" id="form" autocomplete="off">
     <section class="form-box">
-    <label for="nameInput">Cardholder Name</label>
-    <input type="text" 
-    placeholder="e.g. John Doe" 
-    value="" 
-    id="nameInput"
-    class="text-input"/>
+      <label for="nameInput" class="form-label">Cardholder Name</label>
+      <input type="text" 
+        placeholder="e.g. John Doe" 
+        value="" 
+        id="nameInput"
+        class="form-input" />
+      <span id="card-name-error" class="error hide">Can't be blank</span>
     </section>
-
+  
     <section class="form-box">
-    <label for="numberInput">Card Number</label>
-    <input type="text" 
-    placeholder="e.g. 1234 5678 9123" 
-    value="" 
-    maxlength= "16"
-    id="numberInput" 
-    class="text-input" />
+      <label for="numberInput" class="form-label">Card Number</label>
+      <input type="text" 
+        placeholder="e.g. 1234 5678 9123" 
+        value="" 
+        maxlength="16"
+        id="numberInput" 
+        class="form-input" />
+      <span id="card-number-error" class="error hide">Can't be blank</span>
     </section>
-
+  
+    <section class="form-input-row">
     <section class="form-box">
-    <label for="mmInput">Exp. Date (MM/YY)</label>
-    <input type="text" 
-    placeholder="MM" 
-    maxlength= "2"
-    value="" 
-    id="mmInput" 
-    class="text-input"/>
-
-    <input type="text"
-    placeholder="YY" 
-    maxlength= "2"
-    value="" 
-    id="yyInput" 
-    class="text-input"/>
+      <label for="mmInput" class="form-label">Exp. Date (MM/YY)</label>
+      <div class="form-input-row">
+        <input type="text" 
+          placeholder="MM" 
+          maxlength="2"
+          value="" 
+          id="mmInput" 
+          class="form-input-small" />
+  
+        <input type="text"
+          placeholder="YY" 
+          maxlength="2"
+          value="" 
+          id="yyInput" 
+          class="form-input-small" />
+      </div>
+      <span id="card-date-error" class="error hide">Can't be blank</span>
     </section>
-
+  
     <section class="form-box">
-    <label for="cvcInput">CVC</label>
-    <input type="text"
-    placeholder="e.g. 123" 
-    maxlength= "3"
-    value="" 
-    id="cvcInput" 
-    class="text-input" />
-     </section>
-
-  <input type="submit" id="button" value="Confirm" class="button"></input>
+      <label for="cvcInput" class="form-label">CVC</label>
+      <input type="text"
+        placeholder="e.g. 123" 
+        maxlength="3"
+        value="" 
+        id="cvcInput" 
+        class="form-input cvcform" />
+      <span id="card-cvc-error" class="error hide">Can't be blank</span>
+    </section>
+    </section>
+  
+    <input type="submit" class="button" value="Confirm" />
   </form>
     <script src="./js/scripts.js"></script>
   </main>

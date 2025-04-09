@@ -19,9 +19,6 @@ nav ul{
     margin-bottom: 0;
 }
 body{
-    background-image: url(../assents/bg-main-mobile.png);
-    background-repeat: no-repeat;
-    background-size: contain;
     margin: 0;
     font-family: sans-serif;
 }
@@ -40,11 +37,13 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 24px;
 }
 
 .cards-container{
-    width: 343px;
+    background-image: url(../assents/bg-main-mobile.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 375px;
 }
 
 .digital-card{
@@ -53,12 +52,14 @@ body{
     align-items: flex-start;
     align-content: center;
     flex-direction: column;
-    padding: 0.3rem;
+    padding: 0.6rem;
     width: var(--card-size-small-width);
     height: var(--card-size-small-height);
 }
 .digital-card.front{
     position: relative;
+    top: -36px;
+    left: 17px;
     background-image: url(../assents/bg-card-front.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -73,37 +74,79 @@ body{
     background-size: contain;
 }
 .digital-card.back{
-    position: sticky;
-    left: 90px;
-    z-index: -100px;
-    top: -100px;
+    position: relative;
+    left: 73px;
+    top: 32px;
     background-image: url(../assents/bg-card-back.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
-.form-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 327px;
-}
-.form-box{
-    display: flex;
-    flex-direction: column;
-    margin: 1.25rem;
-}
 
-.text-input{
+.form {
+    max-width: 375px;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+
+.form-box {
+    margin-bottom: 1.5rem;
+  }
+  
+.form-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #21092F;
+    text-transform: uppercase
+  }
+
+.form-input {
     height: 45px;
     width: 327px;
     border-radius: 8px;
     border: 1px solid #DFDEE0;
-}
+    font-size: 1.125rem;
+    color: #21092F;
+    font-weight: 500;
+    border-radius: 6px;
+  }
 
-.text-input.invalid{
+.form-input-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+.form-input-small {
+    width: 72px;
+    height: 45px;
+    display: inline-block;
+    border-radius: 8px;
+    border: 1px solid #DFDEE0;
+  }
+
+.form-input.cvcform{
+    display: inline-block;
+    height: 45px;
+    width: 164px;
+  }
+
+.form-input.invalid {
     border: 1px solid  #FF5050;
-}
-
+    color: #FF5050;
+  }
+.error {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 6px;
+    display: none;
+  }
+  
+.error.show {
+    display: block;
+    justify-content: end;
+  }
+  
 .button{
     color: var(--card-text-color);
     background-color:  #21092F;
